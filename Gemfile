@@ -6,6 +6,7 @@ gem 'mongoid'
 gem 'mongoid_spacial'
 gem 'bson_ext'
 gem 'rails-backbone'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,9 +24,10 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'rspec-rails'
   gem 'mongoid-rspec'
-  gem 'capybara'
+  gem 'capybara', '1.1.4'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'jasmine'
+  gem 'launchy'
 end
 
