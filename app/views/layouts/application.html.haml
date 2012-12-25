@@ -33,7 +33,15 @@
 %body
   .container
     #sign_in.sixteen.columns
-      %a(href = new_user_session_path) Sign In
+      %span
+        - if user_signed_in?
+          Hullo #{current_user.name}
+          | <br>
+          = link_to "My Events", events_path
+          |
+          = link_to "Sign Out", destroy_user_session_path, :method => :delete
+        - else
+          = link_to "Sign In", new_user_session_path
     %p.notice
       = notice
     %p.alert

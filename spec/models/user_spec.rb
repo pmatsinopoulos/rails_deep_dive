@@ -16,7 +16,7 @@ describe User do
       user2 = FactoryGirl.build(:user, :email => 'diff@example.com')
       user2.should_not be_valid
       user2.should have(1).error_on :name
-      user2.errors[:name].should include 'is already taken'
+      user2.errors[:name].should include 'has already been taken'
     end
 
     it 'should be required' do
@@ -24,6 +24,21 @@ describe User do
       @user.should_not be_valid
       @user.should have(1).error_on :name
       @user.errors[:name].should include "can't be blank"
+    end
+
+    it "can be built for a user" do
+      @user.save
+      lambda {
+        @user.events << Event.new(:name => 'A new event')
+      }.should change{ @user.events.count }.by(1)
+    end
+
+    it "can be removed from a user" do
+      @user.save
+      @user.events << Event.new(:name => 'A short event')
+      lambda {
+        @user.events.first.destroy
+      }.should change{@user.events.count}.by(-1)
     end
   end
 end

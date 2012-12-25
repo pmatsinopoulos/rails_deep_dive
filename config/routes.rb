@@ -2,9 +2,9 @@ Loccasions::Application.routes.draw do
 
   devise_for :users
 
-  match 'events' => 'home#index', :as => :user_root
+  resources :events
 
-  get "home/index"
+  get 'events' => 'events#index', :as => :user_root
 
   root :to => "home#index"
 

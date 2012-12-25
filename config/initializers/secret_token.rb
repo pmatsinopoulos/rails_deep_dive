@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Loccasions::Application.config.secret_token = '81462e4a1b7d0ab9c403a8d6cb20895940c3119a0ec60b0dc7fe8afc8b1d7992ead0fe1d71353b98d00decf1dccb11641413aa1c32bba81bdaa5d881f9f46759'
+Loccasions::Application.config.secret_token = '5e1fe6f66d61482664b01c9692842f970015c57deaa1db3d8d5305496d832b491c8685374f32d3cda5999b5c703903fce12adaf4080ff7a035c0180bb164d656'
