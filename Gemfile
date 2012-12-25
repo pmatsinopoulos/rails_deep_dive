@@ -28,6 +28,7 @@ group :test, :development do
   gem 'jasmine'
   gem 'spork-rails'
   gem 'launchy'
+  gem 'foreman'
 end
 
 gem 'jquery-rails'
