@@ -28,4 +28,8 @@ class EventsController < ApplicationController
     current_user.events.find(params[:id]).destroy
     redirect_to events_path
   end
+
+  def show
+    @event = current_user.events.find(params[:id])
+  end
 end
